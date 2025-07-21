@@ -1485,6 +1485,28 @@
                 }
             });
         });
+                  // share option ke liye-----//
+      // Select all share icons
+let shareIcons = document.querySelectorAll(".share1");
+
+shareIcons.forEach(icon => {
+  icon.addEventListener("click",  () => {
+    if (navigator.share) {
+      try {
+         navigator.share({
+          title: 'Check this out!',
+          text: 'Visit this awesome website:',
+          url: 'https://adarsh-krishnnjii.github.io/port1/#portfolio' 
+        });
+        console.log("Share successful");
+      } catch (err) {
+        console.log("Share cancelled or failed", err);
+      }
+    } else {
+      alert("Sharing not supported in this browser.");
+    }
+  });
+});
     </script>
     
 </body>
